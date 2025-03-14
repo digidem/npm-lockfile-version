@@ -12,8 +12,8 @@ inputs:
     description: 'Optionally specify path to lockfile'
     default: 'package-lock.json'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.version }}
-    - ${{ inputs.path }}
+  using: 'composite'
+  steps:
+    - name: Check lockfile
+      shell: bash
+      run: script.sh "${{ inputs.version }}" "${{ inputs.path }}"
