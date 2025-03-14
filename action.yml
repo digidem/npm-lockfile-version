@@ -8,8 +8,12 @@ inputs:
   version:
     description: 'Optionally specify the lockfile version'
     default: 2
+  path:
+    description: 'Optionally specify path to lockfile'
+    default: 'package-lock.json'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.version }}
+    - ${{ inputs.path }}
