@@ -16,4 +16,4 @@ runs:
   steps:
     - name: Check lockfile
       shell: bash
-      run: script.sh "${{ inputs.version }}" "${{ inputs.path }}"
+      run: ${{ github.action_path }}/script.sh "${{ inputs.version }}" "${{ inputs.path }}"
