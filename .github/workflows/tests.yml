@@ -10,8 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Create example package-lock.json file
         run: |
-          touch package-lock.json
-          echo '{ "lockfileVersion": 2 }'
+          echo '{ "lockfileVersion": 2 }' > package-lock.json
       - name: Debug
         run: cat package-lock.json
       - name: Run lockfile check action
@@ -27,8 +26,7 @@ jobs:
       - name: Create example package-lock.json file
         run: |
           mkdir -p src
-          touch src/package-lock.json
-          echo '{ "lockfileVersion": 2 }'
+          echo '{ "lockfileVersion": 2 }' > src/package-lock.json
       - name: Run lockfile check action
         # Use the action in this repository.
         uses: ./
@@ -43,8 +41,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Create example package-lock.json file
         run: |
-          touch package-lock.json
-          echo '{ "lockfileVersion": 1 }'
+          echo '{ "lockfileVersion": 1 }' > package-lock.json
       - name: Run lockfile check action
         # Use the action in this repository.
         uses: ./
