@@ -4,7 +4,7 @@ name: Tests
 jobs:
   test-success-default:
     runs-on: ubuntu-latest
-    name: Test
+    name: Test default success
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
 
   test-success-version:
     runs-on: ubuntu-latest
-    name: Test missing lockfile for npm
+    name: Test version input
     steps:
       - name: Checkout
         uses: actions/checkout@v2
