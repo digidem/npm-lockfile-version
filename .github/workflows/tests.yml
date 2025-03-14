@@ -14,6 +14,20 @@ jobs:
         # Use the action in this repository.
         uses: ./
 
+  test-success-path:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create example package-lock.json file
+        run: mkdir -p src && touch src/package-lock.json && echo '{ "lockfileVersion": 2 }'
+      - name: Run lockfile check action
+        # Use the action in this repository.
+        uses: ./
+        with:
+          path: src/package-lock.json
+
   test-success-version:
     runs-on: ubuntu-latest
     name: Test missing lockfile for npm
