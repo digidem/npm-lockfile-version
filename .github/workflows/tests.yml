@@ -11,8 +11,6 @@ jobs:
       - name: Create example package-lock.json file
         run: |
           echo '{ "lockfileVersion": 2 }' > package-lock.json
-      - name: Debug
-        run: cat package-lock.json
       - name: Run lockfile check action
         # Use the action in this repository.
         uses: ./
